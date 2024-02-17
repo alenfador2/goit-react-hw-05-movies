@@ -1,7 +1,3 @@
 export const App = () => {
-  return (
-    <>
-      <h1>Geje są!</h1>
-    </>
-  );
+  return <h1>React</h1>;
 };
