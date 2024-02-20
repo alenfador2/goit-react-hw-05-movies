@@ -25,7 +25,7 @@ export const searchMovie = async query => {
     );
     const data = response.data;
     const { results } = data;
-    console.log(results);
+    return results;
   } catch (error) {
     console.log(error);
   }
