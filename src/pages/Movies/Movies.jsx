@@ -1,4 +1,5 @@
 import SearchInput from 'components/SearchInput/SearchInput';
+import Loader from 'components/Loader/Loader';
 import css from './Movies.module.css';
 import { useState, useEffect } from 'react';
 import { searchMovie } from 'components/fetchMovies';
@@ -43,7 +44,9 @@ const Movies = () => {
           return (
             <li key={item.id}>
               <h3>
-                <a href={item.id}>{item.title}</a>
+                <a href={item.id} className={css.movies_link}>
+                  {item.title}
+                </a>
               </h3>
             </li>
           );

@@ -21,18 +21,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  padding-top: 0;
-  width: 400px;
-  height: 500px;
 }
 .movie_image {
-  width: 500px;
-  height: 300px;
+  width: 300px;
 }
-.movie_text {
-  margin-top: 0;
-  height: 200px;
-  white-space: wrap;
-  text-overflow: ellipsis;
+.movie_title {
+  text-wrap: wrap;
+  width: 200px;
+  text-align: center;
+}
+.movie_link {
+  text-decoration: none;
 }

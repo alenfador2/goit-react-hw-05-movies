@@ -1,3 +1,7 @@
 .search_list {
   list-style-type: square;
+  margin-left: 55px;
+}
+.movies_link {
+  text-decoration: none;
 }

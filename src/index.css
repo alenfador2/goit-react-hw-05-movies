@@ -15,6 +15,22 @@ code {
 }
 .active-link {
   margin-right: 30px;
+  color: azure;
+  font-size: 22px;
+  text-decoration: none;
+}
+.active-link:hover {
+  text-decoration: underline;
+}
+
+.shared-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 70px;
+  margin-inline: auto;
+  height: 50px;
+  background-color: cadetblue;
 }
 
 ul {
