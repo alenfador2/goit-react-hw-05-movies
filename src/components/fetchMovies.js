@@ -11,7 +11,6 @@ export const fetchTrendingMovies = async () => {
     );
     const data = response.data;
     const { results } = data;
-    console.log(results);
     return results;
   } catch (error) {
     console.log('Failed fetch data: ', error);
@@ -26,6 +25,16 @@ export const searchMovie = async query => {
     const data = response.data;
     const { results } = data;
     return results;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchMovieById = async movieId => {
+  try {
+    const response = await axios.get(`/movie/${movieId}?api_key=${apiKey}`);
+    const data = response.data;
+    return data;
   } catch (error) {
     console.log(error);
   }

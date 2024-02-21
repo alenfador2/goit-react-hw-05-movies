@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  width: 80%;
+  width: 90%;
   margin-inline: auto;
 }
 .head_title {
@@ -24,12 +24,12 @@
 }
 .movie_image {
   width: 300px;
+  margin-bottom: auto;
 }
 .movie_title {
-  text-wrap: wrap;
   width: 200px;
   text-align: center;
 }
-.movie_link {
+.link {
   text-decoration: none;
 }

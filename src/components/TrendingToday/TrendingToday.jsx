@@ -3,6 +3,7 @@ import Loader from 'components/Loader/Loader';
 import { fetchTrendingMovies } from 'components/fetchMovies';
 import { useState, useEffect, useCallback } from 'react';
 import { useLoaderHook } from '../IsLoadingHook/LoaderHook';
+import { Link } from 'react-router-dom';
 
 const TrendingToday = () => {
   const { open, close, isLoading } = useLoaderHook(false);
@@ -36,16 +37,20 @@ const TrendingToday = () => {
         <ul className={css.trending_list}>
           {movies.map(movie => {
             return (
-              <li className={css.movie} key={movie.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  className={css.movie_image}
-                  alt={movie.title}
-                ></img>
-                <a href={movie.id} className={css.movie_link}>
+              <Link
+                to={`/movies/${movie.id}`}
+                key={movie.id}
+                className={css.link}
+              >
+                <li className={css.movie} key={movie.id}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    className={css.movie_image}
+                    alt={movie.title}
+                  ></img>
                   <h2 className={css.movie_title}>{movie.original_title}</h2>
-                </a>
-              </li>
+                </li>
+              </Link>
             );
           })}
         </ul>

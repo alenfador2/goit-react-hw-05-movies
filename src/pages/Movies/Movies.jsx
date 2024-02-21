@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { searchMovie } from 'components/fetchMovies';
 import { useLoaderHook } from 'components/IsLoadingHook/LoaderHook';
 import { startTransition } from 'react';
+import { Link } from 'react-router-dom';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -42,13 +43,11 @@ const Movies = () => {
       <ul className={css.search_list}>
         {searchResults.map(item => {
           return (
-            <li key={item.id}>
-              <h3>
-                <a href={item.id} className={css.movies_link}>
-                  {item.title}
-                </a>
-              </h3>
-            </li>
+            <Link to={`/movies/${item.id}`} key={item.id} className={css.link}>
+              <li key={item.id}>
+                <h3>{item.title}</h3>
+              </li>
+            </Link>
           );
         })}
       </ul>
