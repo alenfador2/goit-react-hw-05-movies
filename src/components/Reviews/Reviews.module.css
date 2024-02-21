@@ -1,0 +1,13 @@
+.reviews_div {
+  width: 80%;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.review {
+  border-bottom: 1px solid black;
+}
+
+.user_comment {
+  line-height: normal;
+}

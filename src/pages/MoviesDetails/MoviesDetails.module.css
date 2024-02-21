@@ -1,0 +1,37 @@
+.button {
+  width: 60px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-block: 20px;
+}
+.information {
+  display: flex;
+  width: 800px;
+  flex-direction: row;
+  margin-inline: auto;
+  gap: 30px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  padding: 10px;
+}
+.image {
+  width: 310px;
+}
+.info_div {
+  display: flex;
+  flex-direction: column;
+}
+.extra_info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.outlet_div {
+  margin-top: 40px;
+  width: 800px;
+  padding: 30px;
+  margin-inline: auto;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}

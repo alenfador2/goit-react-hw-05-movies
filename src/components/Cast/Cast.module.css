@@ -1,0 +1,21 @@
+.cast_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-inline: auto;
+  width: auto;
+  gap: 20px;
+}
+.actor {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+}
+.actor_img {
+  width: 100%;
+  border-radius: 10px;
+}
+.actor_name,
+.actor_character_name {
+  flex-wrap: wrap;
+}

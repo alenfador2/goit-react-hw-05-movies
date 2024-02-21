@@ -11,6 +11,7 @@ const SearchInput = ({ onSubmit }) => {
     event.preventDefault();
     onSubmit(query);
   };
+
   return (
     <>
       <form className={css.movie_form} onSubmit={handleSubmit}>

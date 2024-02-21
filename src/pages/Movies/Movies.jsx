@@ -6,6 +6,7 @@ import { searchMovie } from 'components/fetchMovies';
 import { useLoaderHook } from 'components/IsLoadingHook/LoaderHook';
 import { startTransition } from 'react';
 import { Link } from 'react-router-dom';
+import { Notify } from 'notiflix';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -28,6 +29,7 @@ const Movies = () => {
         const results = await searchMovie(query);
         setSearchResult(results);
       } catch (error) {
+        Notify.failure('Error fetching data');
         console.log('Error fetching data: ', error);
       } finally {
         close();
@@ -40,17 +42,25 @@ const Movies = () => {
   return (
     <>
       <SearchInput onSubmit={handleSearch}></SearchInput>
-      <ul className={css.search_list}>
-        {searchResults.map(item => {
-          return (
-            <Link to={`/movies/${item.id}`} key={item.id} className={css.link}>
-              <li key={item.id}>
-                <h3>{item.title}</h3>
-              </li>
-            </Link>
-          );
-        })}
-      </ul>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ul className={css.search_list}>
+          {searchResults.map(item => {
+            return (
+              <Link
+                to={`/movies/${item.id}`}
+                key={item.id}
+                className={css.link}
+              >
+                <li key={item.id}>
+                  <h3 className={css.movie_title}>{item.title}</h3>
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      )}
     </>
   );
 };

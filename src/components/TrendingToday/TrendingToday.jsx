@@ -4,6 +4,7 @@ import { fetchTrendingMovies } from 'components/fetchMovies';
 import { useState, useEffect, useCallback } from 'react';
 import { useLoaderHook } from '../IsLoadingHook/LoaderHook';
 import { Link } from 'react-router-dom';
+import { Notify } from 'notiflix';
 
 const TrendingToday = () => {
   const { open, close, isLoading } = useLoaderHook(false);
@@ -15,6 +16,7 @@ const TrendingToday = () => {
       const fetchedMovies = await fetchTrendingMovies();
       setMovies([...fetchedMovies]);
     } catch (error) {
+      Notify.failure('Something went wrong, please try again');
       console.log('Error here: ', error);
     } finally {
       setTimeout(() => {
